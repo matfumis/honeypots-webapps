@@ -7,7 +7,7 @@
    - **CVE-2018-7600**
    - **Base score 9.8**
 
-### 2. Grav (latest) con Admin Plugin 1.10.7
+### 2. Grav (latest) + Admin Plugin 1.10.7
    - https://www.exploit-db.com/exploits/49973
    - **CVE-2021-21425**
    - **Base score 9.8**
@@ -42,7 +42,7 @@
    - **CVE-2022-2884**
    - **Base score 9.9**
 
-### 9. Wordpress (latest) con Paid Memberships Pro WordPress Plugin 2.9.7
+### 9. Wordpress (latest) + Paid Memberships Pro WordPress Plugin 2.9.7
    - https://www.exploit-db.com/exploits/51235
    - **CVE-2023-23488**
    - **Base score 9.8**
