@@ -4,7 +4,6 @@ set -euo pipefail
 ARCHIVES_BASE="./archives"
 CERTS_DIR="./certs"
 
-# === CONTAINER REPLAY ===
 docker run --name drupal-honey --rm -d \
   -v "${ARCHIVES_BASE}/drupal:/workdir" \
   -v "${CERTS_DIR}:/certs" \
@@ -13,9 +12,9 @@ docker run --name drupal-honey --rm -d \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
 docker run --name gitlab-honey --rm -d \
-  -v "${ARCHIVES_BASE}/login/gitlab:/workdir" \
+  -v "${ARCHIVES_BASE}/gitlab:/workdir" \
   -v "${CERTS_DIR}:/certs" \
-  -v "${ARCHIVES_BASE}/login/gitlab:/archive" \
+  -v "${ARCHIVES_BASE}/gitlab:/archive" \
   -p 8002:8080 \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
@@ -27,9 +26,9 @@ docker run --name grav-honey --rm -d \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
 docker run --name metabase-honey --rm -d \
-  -v "${ARCHIVES_BASE}/login/metabase:/workdir" \
+  -v "${ARCHIVES_BASE}/metabase:/workdir" \
   -v "${CERTS_DIR}:/certs" \
-  -v "${ARCHIVES_BASE}/login/metabase:/archive" \
+  -v "${ARCHIVES_BASE}/metabase:/archive" \
   -p 8004:8080 \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
@@ -48,29 +47,29 @@ docker run --name ghost-honey --rm -d \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
 docker run --name grafana-honey --rm -d \
-  -v "${ARCHIVES_BASE}/login/grafana-vuln:/workdir" \
+  -v "${ARCHIVES_BASE}/grafana-vuln:/workdir" \
   -v "${CERTS_DIR}:/certs" \
-  -v "${ARCHIVES_BASE}/login/grafana-vuln:/archive" \
+  -v "${ARCHIVES_BASE}/grafana-vuln:/archive" \
   -p 8007:8080 \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
 docker run --name jenkins-honey --rm -d \
-  -v "${ARCHIVES_BASE}/login/jenkins:/workdir" \
+  -v "${ARCHIVES_BASE}/jenkins:/workdir" \
   -v "${CERTS_DIR}:/certs" \
-  -v "${ARCHIVES_BASE}/login/jenkins:/archive" \
+  -v "${ARCHIVES_BASE}/jenkins:/archive" \
   -p 8008:8080 \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
 docker run --name phpmyadmin-honey --rm -d \
-  -v "${ARCHIVES_BASE}/login/phpmyadmin-vuln:/workdir" \
+  -v "${ARCHIVES_BASE}/phpmyadmin-vuln:/workdir" \
   -v "${CERTS_DIR}:/certs" \
-  -v "${ARCHIVES_BASE}/login/phpmyadmin-vuln:/archive" \
+  -v "${ARCHIVES_BASE}/phpmyadmin-vuln:/archive" \
   -p 8009:8080 \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
 docker run --name zabbix-honey --rm -d \
-  -v "${ARCHIVES_BASE}/login/zabbix:/workdir" \
+  -v "${ARCHIVES_BASE}/zabbix:/workdir" \
   -v "${CERTS_DIR}:/certs" \
-  -v "${ARCHIVES_BASE}/login/zabbix:/archive" \
+  -v "${ARCHIVES_BASE}/zabbix:/archive" \
   -p 8010:8080 \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
