@@ -33,9 +33,9 @@ docker run --name metabase-honey --rm -d \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
 docker run --name wordpress-honey --rm -d \
-  -v "${ARCHIVES_BASE}/wordpress-vuln:/workdir" \
+  -v "${ARCHIVES_BASE}/wordpress:/workdir" \
   -v "${CERTS_DIR}:/certs" \
-  -v "${ARCHIVES_BASE}/wordpress-vuln:/archive" \
+  -v "${ARCHIVES_BASE}/wordpress:/archive" \
   -p 8005:8080 \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
@@ -47,9 +47,9 @@ docker run --name ghost-honey --rm -d \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
 docker run --name grafana-honey --rm -d \
-  -v "${ARCHIVES_BASE}/grafana-vuln:/workdir" \
+  -v "${ARCHIVES_BASE}/grafana:/workdir" \
   -v "${CERTS_DIR}:/certs" \
-  -v "${ARCHIVES_BASE}/grafana-vuln:/archive" \
+  -v "${ARCHIVES_BASE}/grafana:/archive" \
   -p 8007:8080 \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
@@ -61,9 +61,9 @@ docker run --name jenkins-honey --rm -d \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
 docker run --name phpmyadmin-honey --rm -d \
-  -v "${ARCHIVES_BASE}/phpmyadmin-vuln:/workdir" \
+  -v "${ARCHIVES_BASE}/phpmyadmin:/workdir" \
   -v "${CERTS_DIR}:/certs" \
-  -v "${ARCHIVES_BASE}/phpmyadmin-vuln:/archive" \
+  -v "${ARCHIVES_BASE}/phpmyadmin:/archive" \
   -p 8009:8080 \
   minaq3/wpr:latest replay archive.wprgo wpr_cert.pem wpr_key.pem
 
