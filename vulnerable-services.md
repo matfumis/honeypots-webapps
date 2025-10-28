@@ -30,7 +30,7 @@
 ### 6. Grafana 8.3.0
    - https://www.exploit-db.com/exploits/50581
    - **CVE-2021-43798**
-   - **Base score 7.5** (GitHub)
+   - **Base score 7.5**
 
 ### 7. PhpMyAdmin 4.8.1
    - https://www.exploit-db.com/exploits/50457

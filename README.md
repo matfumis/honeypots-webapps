@@ -12,7 +12,8 @@ Details about chosen services versions and exploits are available in ![this list
 
 To setup and run the honeypots, just clone the repository and execute `start-honeypots.sh`.
 
-Honeypots were tested using nginx as reverse proxy, with one rule for each running instance pointing to the correpondent port in the `proxy_pass` entry. **IMPORTANT**: each rule must contain in the `proxy_set_header Host` entry the name used to record the service: the pattern used during the recording phase was `<name-of-the-service>.local`. As example:
+Honeypots were tested using nginx as reverse proxy, with one rule for each running instance pointing to the correpondent port in the `proxy_pass` entry. 
+**IMPORTANT**: each rule must overwrite the `Host` header in the incoming request to match the name used to record the service: the pattern used during the recording phase was `<name-of-the-service>.local`. As example:
 
 ```
 server {
